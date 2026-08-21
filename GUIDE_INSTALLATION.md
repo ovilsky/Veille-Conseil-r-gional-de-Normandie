@@ -117,6 +117,39 @@ exemple juste après une séance du Conseil régional), répétez l'étape 5.
   données plutôt que de les effacer, mais il faudra qu'un développeur ajuste
   le script (les extractions sont commentées dans
   `fetch_veille_normandie.py` pour faciliter ce genre d'ajustement).
+
+## Le blocage 403 persiste sur les fiches élus
+
+Si le journal d'exécution (onglet Actions) affiche `403 Client Error:
+Forbidden for url: https://www.normandie.fr/conseillers-regionaux` malgré
+des en-têtes de navigateur standards dans le script, ce n'est probablement
+pas un problème de code : c'est le signe que normandie.fr bloque
+spécifiquement les adresses IP des serveurs GitHub Actions (un pare-feu
+anti-robot qui bloque par réputation d'adresse IP, pas par en-tête HTTP).
+Deux solutions, de la plus simple à la plus robuste :
+
+1. **Réessayer plus tard.** Ces blocages sont parfois temporaires (liste
+   d'adresses IP suspectes mise à jour régulièrement par le fournisseur du
+   pare-feu). Relancez manuellement dans quelques jours (étape 5).
+
+2. **Passer à un "self-hosted runner"** — au lieu de faire tourner le script
+   sur un serveur GitHub (dont l'adresse IP peut être bloquée), on le fait
+   tourner sur un ordinateur que vous contrôlez (un vieux PC ou un
+   Raspberry Pi allumé en permanence, avec une connexion internet classique
+   de bureau ou domestique — l'exécution automatique quotidienne continue de
+   se déclencher depuis GitHub, seule l'adresse IP change) :
+   - Dans votre dépôt : **Settings → Actions → Runners → New self-hosted runner**.
+   - Suivez les instructions affichées (télécharger un petit programme,
+     le lancer une fois pour l'enregistrer, puis le laisser tourner en
+     arrière-plan — GitHub fournit une commande à copier-coller).
+   - Dans `.github/workflows/update-daily.yml`, remplacez la ligne
+     `runs-on: ubuntu-latest` par `runs-on: self-hosted`.
+   - Ce changement demande un peu d'aide technique la première fois ; une
+     fois en place, il n'y a plus rien à faire.
+
+Dans les deux cas, ce n'est pas une anomalie du script : c'est une décision
+du site cible, hors de notre contrôle.
+
 - **Un bouton "Feedback" dans le dashboard** n'existe pas dans cette version
   — pour toute anomalie constatée par la rédaction, notez-la et faites-la
   remonter à la personne qui maintient le script.
