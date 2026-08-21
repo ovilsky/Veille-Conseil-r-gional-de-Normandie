@@ -86,8 +86,30 @@ PROFILE_MAX = None   # mettre un entier pour limiter en test (ex. 5) ; None = to
 # Fiche : https://www.data.gouv.fr/fr/datasets/liste-des-deliberations-mandat-actuel-2021-a-2028/
 DATASET_SLUG = "liste-des-deliberations-mandat-actuel-2021-a-2028"
 DATASET_API_URL = f"https://www.data.gouv.fr/api/1/datasets/{DATASET_SLUG}/"
-# Lien de secours déjà rencontré comme fonctionnel à un moment donné —
-# tenté seulement si l'API ne renvoie rien d'exploitable.
+
+# Candidats supplémentaires connus sur la plateforme régionale DataNormandie
+# elle-même (moteur "data4citizen"), au cas où l'API data.gouv.fr ne
+# renverrait rien d'exploitable. Le motif d'URL
+# "{site}/d4c/api/records/2.0/downloadfile/format=csv&resource_id=..." est
+# confirmé fonctionner sur www.datanormandie.fr pour d'autres jeux de
+# données de la plateforme. Les deux identifiants ci-dessous sont les
+# resource_id réels de CE jeu de données précis (relevés sur sa page
+# officielle datanormandie.fr/visualisation/analyze/?id=liste-des-deliberations-mandat-actuel-2021-a-2028,
+# qui liste deux ressources de tailles différentes sans préciser laquelle
+# est le CSV à jour) — les deux sont essayées, la validation de contenu
+# (looks_like_csv) élimine automatiquement celle qui ne conviendrait pas.
+D4C_RESOURCE_IDS = [
+    "25514cce-9f70-448e-a31e-1af6f1249f40",
+    "7ce95928-6948-40e2-a51b-47334e2d375d",
+]
+D4C_DOWNLOAD_TEMPLATE = (
+    "https://www.datanormandie.fr/d4c/api/records/2.0/downloadfile/"
+    "format=csv&resource_id={rid}&use_labels_for_header=true"
+)
+
+# Lien de secours historique — déjà rencontré comme mort (redirige vers la
+# page d'accueil de datanormandie.fr), gardé en tout dernier recours
+# uniquement pour trace/diagnostic.
 DELIBERATIONS_CSV_URL_FALLBACK = "https://www.data.gouv.fr/api/1/datasets/r/c545c1e9-93e6-43da-896f-b1df4e81fb33"
 
 ELUS_LISTE_URL = "https://www.normandie.fr/conseillers-regionaux"
@@ -213,6 +235,9 @@ def resolve_deliberations_csv_url():
     if not candidates and all_resources_seen:
         print(f"    ! API interrogée avec succès mais aucune ressource CSV identifiée "
               f"parmi : {all_resources_seen}", file=sys.stderr)
+    # Candidats natifs DataNormandie (motif d'API confirmé sur la
+    # plateforme), essayés avant le vieux lien de secours mort.
+    candidates.extend(D4C_DOWNLOAD_TEMPLATE.format(rid=rid) for rid in D4C_RESOURCE_IDS)
     candidates.append(DELIBERATIONS_CSV_URL_FALLBACK)
     return candidates
 
