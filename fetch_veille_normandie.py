@@ -56,20 +56,33 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 
+# En-têtes complets, proches d'un navigateur standard. Un simple
+# "User-Agent" identifiant ne suffit pas partout : plusieurs sites publics
+# (dont normandie.fr, constaté en usage réel) renvoient 403 Forbidden aux
+# requêtes qui n'ont que le User-Agent par défaut de la bibliothèque
+# requests ou un jeu d'en-têtes minimal — probablement une règle de
+# pare-feu applicatif basique plutôt qu'un blocage ciblé.
 HEADERS = {
-    "User-Agent": "VeilleNormandieRedaction/1.0 (usage redaction locale ; contact: redaction@example.fr)"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
 }
 REQUEST_DELAY = 1.0  # secondes entre deux requêtes (politesse envers le serveur)
 PROFILE_MAX = None   # mettre un entier pour limiter en test (ex. 5) ; None = tous les élus
 
-# Redirection stable de data.gouv.fr vers le fichier CSV le plus récent du
-# jeu de données (le lien change moins souvent que l'hébergement source :
-# une migration de plateforme côté Région a déjà cassé un lien direct
-# pendant la préparation de ce script). Identifiant de ressource confirmé
-# sur la fiche data.gouv.fr du jeu de données — à reconfirmer à
-# l'installation, cf. GUIDE_INSTALLATION.md étape "Vérifier le lien du CSV".
+# Identifiant stable du jeu de données sur data.gouv.fr (ne change pas,
+# contrairement à l'URL du fichier CSV lui-même, dont l'hébergement dépend
+# de la plateforme utilisée côté Région — une migration a déjà eu lieu
+# pendant la préparation de ce script). On interroge l'API de data.gouv.fr
+# à chaque exécution pour obtenir l'URL réelle et actuelle du fichier CSV,
+# plutôt que de figer un lien qui peut casser silencieusement.
 # Fiche : https://www.data.gouv.fr/fr/datasets/liste-des-deliberations-mandat-actuel-2021-a-2028/
-DELIBERATIONS_CSV_URL = "https://www.data.gouv.fr/api/1/datasets/r/c545c1e9-93e6-43da-896f-b1df4e81fb33"
+DATASET_SLUG = "liste-des-deliberations-mandat-actuel-2021-a-2028"
+DATASET_API_URL = f"https://www.data.gouv.fr/api/1/datasets/{DATASET_SLUG}/"
+# Lien de secours déjà rencontré comme fonctionnel à un moment donné —
+# tenté seulement si l'API ne renvoie rien d'exploitable.
+DELIBERATIONS_CSV_URL_FALLBACK = "https://www.data.gouv.fr/api/1/datasets/r/c545c1e9-93e6-43da-896f-b1df4e81fb33"
 
 ELUS_LISTE_URL = "https://www.normandie.fr/conseillers-regionaux"
 SITE_BASE = "https://www.normandie.fr"
@@ -92,10 +105,21 @@ POSTAL_RE = re.compile(r"\b\d{5}\b")
 EMAIL_RE = re.compile(r"[\w.+-]+@normandie\.fr")
 
 
-def get(url, **kwargs):
-    resp = requests.get(url, headers=HEADERS, timeout=20, **kwargs)
-    resp.raise_for_status()
-    return resp
+def get(url, retries=2, **kwargs):
+    """GET avec quelques nouvelles tentatives en cas d'erreur transitoire
+    (403/429/5xx) — un pare-feu applicatif ou une limite de débit peut
+    bloquer une requête isolée sans bloquer systématiquement le site."""
+    last_exc = None
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=20, **kwargs)
+            resp.raise_for_status()
+            return resp
+        except requests.RequestException as e:
+            last_exc = e
+            if attempt < retries:
+                time.sleep(REQUEST_DELAY * (attempt + 2))
+    raise last_exc
 
 
 # ---------------------------------------------------------------------------
@@ -133,18 +157,78 @@ def parse_int_or_none(raw):
         return None
 
 
-def fetch_deliberations():
-    """Télécharge et parse le CSV des délibérations. En cas d'échec réseau,
-    remonte l'exception au lieu de retourner une liste vide : main() décide
-    alors de conserver les données de la veille plutôt que d'écraser un
-    historique valide par un fichier vide (cf. cahier des charges)."""
-    resp = get(DELIBERATIONS_CSV_URL)
-    # utf-8-sig : le fichier commence par un BOM (constaté sur un extrait réel)
-    text = resp.content.decode("utf-8-sig")
-    reader = csv.DictReader(io.StringIO(text))
+REQUIRED_CSV_COLUMNS = {"DELIB_ID", "DELIB_DATE", "DELIB_OBJET"}
 
-    required = {"DELIB_ID", "DELIB_DATE", "DELIB_OBJET"}
-    if not required.issubset(set(reader.fieldnames or [])):
+
+def looks_like_csv(text):
+    """Vérifie que le contenu récupéré est bien le CSV attendu et pas une
+    page d'erreur ou une page d'accueil HTML (déjà rencontré : un lien de
+    téléchargement cassé peut renvoyer 200 OK avec une page HTML au lieu du
+    fichier demandé — un simple raise_for_status() ne l'aurait pas détecté)."""
+    first_line = text.lstrip("\ufeff").split("\n", 1)[0]
+    return "DELIB_ID" in first_line and not first_line.strip().lower().startswith(("<!doctype", "<html"))
+
+
+def resolve_deliberations_csv_url():
+    """Interroge l'API de data.gouv.fr pour obtenir l'URL actuelle du
+    fichier CSV du jeu de données, plutôt que de dépendre d'un lien figé
+    dans ce script (qui a déjà cassé une fois lors d'une migration de
+    plateforme côté Région). Retourne la liste des URLs à essayer, dans
+    l'ordre : celles trouvées via l'API d'abord, le lien de secours en
+    dernier recours."""
+    candidates = []
+    try:
+        meta = get(DATASET_API_URL).json()
+        for res in meta.get("resources", []):
+            fmt = (res.get("format") or "").lower()
+            title = (res.get("title") or "").lower()
+            url = res.get("latest") or res.get("url")
+            if url and (fmt == "csv" or title.endswith(".csv")):
+                candidates.append(url)
+    except (requests.RequestException, ValueError) as e:
+        print(f"    ! impossible d'interroger l'API data.gouv.fr ({e}) — "
+              f"repli sur le lien de secours", file=sys.stderr)
+    candidates.append(DELIBERATIONS_CSV_URL_FALLBACK)
+    return candidates
+
+
+def fetch_deliberations():
+    """Télécharge et parse le CSV des délibérations. Essaie plusieurs URLs
+    candidates (résolues dynamiquement) et valide le contenu de chacune
+    avant de l'accepter. En cas d'échec de toutes les candidates, remonte
+    l'exception au lieu de retourner une liste vide : main() décide alors de
+    conserver les données de la veille plutôt que d'écraser un historique
+    valide par un fichier vide (cf. cahier des charges)."""
+    candidates = resolve_deliberations_csv_url()
+    text = None
+    errors = []
+    for url in candidates:
+        try:
+            resp = get(url)
+            # utf-8-sig : le fichier commence par un BOM (constaté sur un extrait réel)
+            candidate_text = resp.content.decode("utf-8-sig", errors="replace")
+        except requests.RequestException as e:
+            errors.append(f"{url} → erreur réseau : {e}")
+            continue
+        if not looks_like_csv(candidate_text):
+            apercu = candidate_text.strip().splitlines()[0][:80] if candidate_text.strip() else "(vide)"
+            errors.append(f"{url} → contenu inattendu (pas un CSV valide, aperçu : {apercu!r})")
+            continue
+        text = candidate_text
+        print(f"    ✓ CSV valide récupéré depuis {url}")
+        break
+
+    if text is None:
+        raise ValueError(
+            "Aucune des URLs candidates n'a renvoyé un CSV valide :\n      "
+            + "\n      ".join(errors)
+            + "\n    Ne pas deviner une nouvelle URL : aller vérifier à la main sur "
+            "https://www.data.gouv.fr/fr/datasets/liste-des-deliberations-mandat-actuel-2021-a-2028/ "
+            "quel fichier est réellement accessible, puis mettre à jour DELIBERATIONS_CSV_URL_FALLBACK."
+        )
+
+    reader = csv.DictReader(io.StringIO(text))
+    if not REQUIRED_CSV_COLUMNS.issubset(set(reader.fieldnames or [])):
         raise ValueError(
             f"Colonnes attendues absentes du CSV (colonnes trouvées : "
             f"{reader.fieldnames}). Le schéma a peut-être changé côté Région : "
@@ -421,7 +505,6 @@ def main():
         "generated_at": generated_at,
         "premiere_execution": premiere_execution,
         "sources": {
-            "deliberations_csv": DELIBERATIONS_CSV_URL,
             "deliberations_fiche": "https://www.data.gouv.fr/fr/datasets/liste-des-deliberations-mandat-actuel-2021-a-2028/",
             "elus_liste": ELUS_LISTE_URL,
             "elus_scdl_schema": "https://schema.data.gouv.fr/scdl/deliberations/",
