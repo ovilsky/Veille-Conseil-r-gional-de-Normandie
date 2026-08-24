@@ -199,9 +199,13 @@ def looks_like_csv(text):
     """Vérifie que le contenu récupéré est bien le CSV attendu et pas une
     page d'erreur ou une page d'accueil HTML (déjà rencontré : un lien de
     téléchargement cassé peut renvoyer 200 OK avec une page HTML au lieu du
-    fichier demandé — un simple raise_for_status() ne l'aurait pas détecté)."""
+    fichier demandé — un simple raise_for_status() ne l'aurait pas détecté).
+    Comparaison insensible à la casse : la plateforme DataNormandie renvoie
+    les en-têtes de colonnes en minuscules ("delib_id") alors que le CSV
+    d'origine (SCDL) les a en majuscules ("DELIB_ID") — constaté en usage
+    réel, les deux formes sont légitimes selon la source."""
     first_line = text.lstrip("\ufeff").split("\n", 1)[0]
-    return "DELIB_ID" in first_line and not first_line.strip().lower().startswith(("<!doctype", "<html"))
+    return "delib_id" in first_line.lower() and not first_line.strip().lower().startswith(("<!doctype", "<html"))
 
 
 def resolve_deliberations_csv_url():
@@ -278,7 +282,8 @@ def fetch_deliberations():
         )
 
     reader = csv.DictReader(io.StringIO(text))
-    if not REQUIRED_CSV_COLUMNS.issubset(set(reader.fieldnames or [])):
+    fieldnames_upper = {(fn or "").strip().upper() for fn in (reader.fieldnames or [])}
+    if not REQUIRED_CSV_COLUMNS.issubset(fieldnames_upper):
         raise ValueError(
             f"Colonnes attendues absentes du CSV (colonnes trouvées : "
             f"{reader.fieldnames}). Le schéma a peut-être changé côté Région : "
@@ -288,6 +293,7 @@ def fetch_deliberations():
     seen_ids = set()
     results = []
     for row in reader:
+        row = {(k or "").strip().upper(): v for k, v in row.items()}
         delib_id = (row.get("DELIB_ID") or "").strip()
         if not delib_id or delib_id in seen_ids:
             # dédoublonnage par identifiant métier, pas par URL (une même
