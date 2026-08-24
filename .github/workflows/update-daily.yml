@@ -33,7 +33,17 @@ jobs:
         run: |
           git config user.name "veille-normandie-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add veille-data.json elus-precedent.json index.html
+          # git add fichier par fichier : elus-precedent.json n'existe pas
+          # encore tant que la collecte des élus n'a jamais réussi une
+          # première fois (ex. blocage réseau persistant) — un git add sur
+          # un fichier inexistant ferait échouer toute l'étape (set -e).
+          for f in veille-data.json elus-precedent.json index.html; do
+            if [ -f "$f" ]; then
+              git add "$f"
+            else
+              echo "  (ignoré, pas encore généré : $f)"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "Rien de nouveau à publier aujourd'hui."
             exit 0
