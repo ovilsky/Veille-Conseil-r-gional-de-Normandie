@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T12:19:56",
+  "generated_at": "2026-08-25T13:22:08",
   "premiere_execution": false,
   "sources": {
     "deliberations_fiche": "https://www.data.gouv.fr/fr/datasets/liste-des-deliberations-mandat-actuel-2021-a-2028/",
@@ -95182,6 +95182,8 @@
       "date_debut_mandat": "2024-01-03",
       "date_naissance": "1977-04-23",
       "groupe": null,
+      "nuance_politique": null,
+      "groupe_source": null,
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95195,7 +95197,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1991-02-13",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "EELV",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95209,7 +95213,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1956-05-19",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95223,7 +95229,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1962-03-29",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95237,7 +95245,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1957-04-02",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95251,8 +95261,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1974-08-27",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "normandie.fr (fiche consultée manuellement le 25/08/2026) + Wikipédia (nuance, fourni par l'utilisateur)",
+      "role_brut": "1ère vice-présidente / Développement économique et soutien aux entreprises, RSE des entreprises",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/sophie-gaugain"
@@ -95265,8 +95277,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1960-06-21",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "UDI-LC",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "12e vice-président / Culture et patrimoine",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/patrick-gomont"
@@ -95279,8 +95293,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1974-10-29",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LC",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "11e vice-présidente / Affaires générales, ressources humaines et moyens de la collectivité",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/catherine-gourney-leconte"
@@ -95293,7 +95309,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1969-01-05",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95307,7 +95325,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1972-04-01",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95321,7 +95341,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1990-05-20",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95335,7 +95357,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1982-03-20",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "EELV",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95349,8 +95373,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1968-03-19",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "UDI-MR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseillère déléguée / Économie sociale et solidaire",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/lynda-lahalle"
@@ -95363,7 +95389,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1983-01-11",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95377,8 +95405,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1971-05-01",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller délégué / Orientation · Président de la commission Emploi, formation et orientation",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/marc-millet"
@@ -95391,7 +95421,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1969-01-15",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95405,7 +95437,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1976-09-17",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95419,7 +95453,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1981-09-26",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "LAF",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95433,7 +95469,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1973-02-02",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95447,7 +95485,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1978-05-14",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "G·s",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95461,7 +95501,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1987-02-06",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95475,7 +95517,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1966-03-05",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95489,8 +95533,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1962-08-08",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "MoDem",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "10e vice-président / Politique de la ville et cohésion sociale",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/rodolphe-thomas"
@@ -95503,7 +95549,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1974-03-28",
-      "groupe": null,
+      "groupe": "Normandie Terre d'avenir",
+      "nuance_politique": "LREM",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95517,7 +95565,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1976-01-30",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95531,7 +95581,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1990-06-22",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95545,8 +95597,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1957-04-04",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller délégué / Rénovation énergétique du bâti durable",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/thibaut-beaute"
@@ -95559,7 +95613,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1952-12-25",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95573,7 +95629,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1949-12-08",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95587,7 +95645,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1988-07-29",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95601,8 +95661,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1963-03-11",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR puis DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
+      "role_brut": "8e vice-président / Aménagement du territoire et ruralité",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/guy-lefrand"
@@ -95615,8 +95677,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1961-05-07",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LC",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Président de la commission Agriculture et pêche",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/herve-maurey"
@@ -95629,8 +95693,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1961-08-17",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LC",
+      "groupe_source": "normandie.fr (fiche consultée manuellement le 25/08/2026) + Wikipédia (nuance, fourni par l'utilisateur)",
+      "role_brut": "Président de la Région Normandie",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/herve-morin"
@@ -95643,7 +95709,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1976-04-17",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "UDI",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95657,7 +95725,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1984-09-18",
-      "groupe": null,
+      "groupe": "Normandie Terre d'avenir",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95671,7 +95741,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1974-10-04",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95685,8 +95757,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1975-07-07",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "MoDem",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
+      "role_brut": "15e vice-président / Europe, international, rayonnement de la Normandie",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/francois-xavier-priollaud"
@@ -95699,7 +95773,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1969-05-10",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95713,7 +95789,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1972-10-08",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "EÉLV",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95727,7 +95805,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1961-11-09",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95741,7 +95821,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1979-01-25",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95755,7 +95837,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1981-08-07",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95769,8 +95853,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1975-04-14",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "9e vice-présidente / Enseignement supérieur, recherche, innovation, numérique et santé",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/julie-barenton-guillas"
@@ -95783,7 +95869,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1975-06-29",
-      "groupe": null,
+      "groupe": "Normandie Terre d'avenir",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95797,7 +95885,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1976-03-18",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "EÉLV",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95811,7 +95901,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1992-09-25",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95825,7 +95917,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2022-07-15",
       "date_naissance": "1983-02-18",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PP",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95839,7 +95933,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1966-02-05",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95853,8 +95949,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1979-12-20",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller délégué / Grands évènements sportifs et haut niveau",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/sylvain-letouze"
@@ -95867,7 +95965,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1980-06-19",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95881,7 +95981,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1967-02-16",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95895,8 +95997,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1979-11-26",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseillère déléguée / Races animales patrimoniales",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/stephanie-maube"
@@ -95909,8 +96013,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1971-05-28",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Présidente de la commission Europe, international et attractivité",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/florence-mazier"
@@ -95923,7 +96029,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1976-10-14",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "LAF",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95937,7 +96045,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1962-04-19",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95951,7 +96061,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1969-07-27",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "G·s",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95965,8 +96077,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1955-07-11",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "MoDem",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller délégué / Mer",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/pierre-vogt"
@@ -95979,7 +96093,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1952-06-24",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -95993,7 +96109,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1956-08-25",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96007,8 +96125,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1972-02-02",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "4e vice-président / Lycées et éducation",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/bertrand-deniaud"
@@ -96022,6 +96142,8 @@
       "date_debut_mandat": "2025-07-14",
       "date_naissance": "1973-07-04",
       "groupe": null,
+      "nuance_politique": null,
+      "groupe_source": null,
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96035,7 +96157,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1992-01-27",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96049,7 +96173,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "2001-02-20",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96063,8 +96189,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1970-05-27",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Président de la commission Finances",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/thierry-liger"
@@ -96078,6 +96206,8 @@
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1967-11-07",
       "groupe": null,
+      "nuance_politique": null,
+      "groupe_source": null,
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96091,8 +96221,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1965-12-26",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Présidente de la commission Affaires générales et moyens de la collectivité · Présidente de la commission Environnement et développement durable",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/catherine-meunier"
@@ -96106,6 +96238,8 @@
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1980-01-24",
       "groupe": null,
+      "nuance_politique": null,
+      "groupe_source": null,
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96119,7 +96253,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1977-12-21",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96133,7 +96269,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1957-02-08",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "UDI",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96147,8 +96285,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1989-07-23",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller délégué / Nautisme",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/augustin-boeuf"
@@ -96161,7 +96301,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1973-01-15",
-      "groupe": null,
+      "groupe": "Normandie Terre d'avenir",
+      "nuance_politique": "TdP",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96175,7 +96317,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1935-11-20",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96189,7 +96333,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1976-10-13",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96203,7 +96349,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1985-01-26",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96217,7 +96365,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1967-08-16",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "EELV",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96231,8 +96381,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1966-05-16",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseillère déléguée / Filière équine",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/malika-cherriere"
@@ -96245,8 +96397,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1954-04-28",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller régional chargé de la mission Patrimoine",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/edouard-de-lamaze"
@@ -96259,8 +96413,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1954-05-10",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "UDI-LC",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
+      "role_brut": "14e vice-président / Transition environnementale et énergétique",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/hubert-dejean-de-la-batie"
@@ -96273,7 +96429,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1982-06-05",
-      "groupe": null,
+      "groupe": "Normandie Terre d'avenir",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96287,7 +96445,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1977-05-12",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96302,6 +96462,8 @@
       "date_debut_mandat": "2022-07-05",
       "date_naissance": "1973-05-31",
       "groupe": null,
+      "nuance_politique": null,
+      "groupe_source": null,
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96315,8 +96477,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1973-06-25",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
+      "role_brut": "3e vice-présidente / Agriculture, pêche et forêt",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/clotilde-eudier"
@@ -96329,7 +96493,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1981-09-11",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "EELV",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96343,7 +96509,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1996-10-25",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96357,8 +96525,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1967-06-02",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR puis DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
+      "role_brut": "6e vice-président / Mobilités, transports et Axe Seine",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/jean-baptiste-gastinne"
@@ -96371,7 +96541,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1979-03-03",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96385,8 +96557,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1987-12-14",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "normandie.fr (fiche consultée manuellement le 25/08/2026) + Wikipédia (nuance, fourni par l'utilisateur)",
+      "role_brut": "2e vice-président / Emploi, formation, orientation et apprentissage",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/jonas-haddad"
@@ -96399,7 +96573,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1973-09-09",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "GE",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96413,8 +96589,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1968-04-01",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller délégué / Forêt",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/eric-herbet"
@@ -96427,8 +96605,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1967-02-22",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "UDI-LC",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseiller délégué / Sécurité",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/pascal-houbron"
@@ -96441,7 +96621,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1970-08-22",
-      "groupe": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96455,7 +96637,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1971-03-31",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96469,8 +96653,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1959-09-11",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Président de la commission Aménagement du territoire, mobilités, santé, sécurité",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/xavier-lefrancois"
@@ -96483,8 +96669,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1967-05-19",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
+      "role_brut": "13e vice-présidente / Sport, jeunesse, nautisme",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/aline-louisy-louis"
@@ -96497,8 +96685,10 @@
       "date_debut_fonction": "2021-07-02",
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1973-09-17",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "DVD",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
+      "role_brut": "5e vice-présidente / Finances",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/virginie-lutrot"
@@ -96511,7 +96701,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1989-07-27",
-      "groupe": null,
+      "groupe": "Normandie écologie",
+      "nuance_politique": "G·s",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96525,7 +96717,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1977-04-11",
-      "groupe": null,
+      "groupe": "La Gauche Normande - Socialistes et Apparentés",
+      "nuance_politique": "PS",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96539,8 +96733,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1960-07-06",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LC",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Présidente de la commission Culture, tourisme et patrimoine",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/catherine-morin-desailly"
@@ -96553,7 +96749,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1982-01-27",
-      "groupe": null,
+      "groupe": "Normandie Terre d'avenir",
+      "nuance_politique": "DVC",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96567,7 +96765,9 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1975-02-19",
-      "groupe": null,
+      "groupe": "Rassemblement national - Faire gagner la Normandie",
+      "nuance_politique": "RN",
+      "groupe_source": "Wikipédia (fourni par l'utilisateur, vérifié le 25/08/2026)",
       "role_brut": null,
       "maj": null,
       "url": null,
@@ -96581,8 +96781,10 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1965-01-13",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "LR",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "Conseillère déléguée / Jeunesse · Présidente de la commission Jeunesse et sport",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/marie-helene-roux"
@@ -96595,12 +96797,789 @@
       "date_debut_fonction": null,
       "date_debut_mandat": "2021-07-02",
       "date_naissance": "1994-11-15",
-      "groupe": null,
-      "role_brut": null,
+      "groupe": "La Normandie Conquérante avec Hervé Morin",
+      "nuance_politique": "MoDem",
+      "groupe_source": "Wikipédia (nuance/groupe) + Trombinoscope officiel normandie.fr avril 2026 (délégation), fournis par l'utilisateur",
+      "role_brut": "10e vice-président / Politique de la ville et cohésion sociale",
       "maj": null,
       "url": null,
       "url_probable": "https://www.normandie.fr/anais-thomas"
     }
   ],
-  "mouvements": []
+  "mouvements": [
+    {
+      "type": "changement_groupe",
+      "nom": "Geneviève AUGÉ",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Philippe CHAPRON",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Sophie DE GIBON",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Gilles DÉTERVILLE",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Sophie GAUGAIN",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Sophie GAUGAIN",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 1ère vice-présidente / Développement économique et soutien aux entreprises, RSE des entreprises ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Patrick GOMONT",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Patrick GOMONT",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 12e vice-président / Culture et patrimoine ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Catherine GOURNEY LECONTE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Catherine GOURNEY LECONTE",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 11e vice-présidente / Affaires générales, ressources humaines et moyens de la collectivité ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Sylvie GRENIER",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Chantal HENRY",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Claire JOLIVET-SERVANT",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Rudy L'ORPHELIN",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Lynda LAHALLE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Lynda LAHALLE",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseillère déléguée / Économie sociale et solidaire ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Marie LE VERN",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Marc MILLET",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Marc MILLET",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller délégué / Orientation · Président de la commission Emploi, formation et orientation ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Paul MILLIEZ",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Cédric NOUVELOT",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Aristide OLIVIER",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Nathalie PORTE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Bastien RECHER",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Aminthe RENOUF",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Jean-Philippe ROY",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Anaïs THOMAS",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Anaïs THOMAS",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 10e vice-président / Politique de la ville et cohésion sociale ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Stéphanie YON-COURTIN",
+      "detail": "Groupe politique : « — » → « Normandie Terre d'avenir ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Gisèle BAKI",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Benoît BALSAN",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Thibaut BEAUTÉ",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Thibaut BEAUTÉ",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller délégué / Rénovation énergétique du bâti durable ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Marie-Noëlle CHEVALIER",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Guy DOSSANG",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Timothée HOUSSIN",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Guy LEFRAND",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Guy LEFRAND",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 8e vice-président / Aménagement du territoire et ruralité ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Hervé MAUREY",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Hervé MAUREY",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Président de la commission Agriculture et pêche ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Hervé MORIN",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Hervé MORIN",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Président de la Région Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Hafidha OUADAH",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "François OUZILLEAU",
+      "detail": "Groupe politique : « — » → « Normandie Terre d'avenir ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Alexandra PIEL",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "François-Xavier PRIOLLAUD",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "François-Xavier PRIOLLAUD",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 15e vice-président / Europe, international, rayonnement de la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Cécile REMY-BASTIT",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Laetitia SANCHEZ",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Martine SEGUELA",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Emmanuelle TREMEL",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Timour VEYRI",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Julie BARENTON-GUILLAS",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Julie BARENTON-GUILLAS",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 9e vice-présidente / Enseignement supérieur, recherche, innovation, numérique et santé ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Angélique FERREIRA",
+      "detail": "Groupe politique : « — » → « Normandie Terre d'avenir ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Guillaume HÉDOUIN",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Antoine JEAN",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Quentin LAGALLARDE",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Valérie LAISNEY",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Sylvain LETOUZÉ",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Sylvain LETOUZÉ",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller délégué / Grands évènements sportifs et haut niveau ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "David MARGUERITTE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Pascal MARIE",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Stéphanie MAUBÉ",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Stéphanie MAUBÉ",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseillère déléguée / Races animales patrimoniales ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Florence MAZIER",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Florence MAZIER",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Présidente de la commission Europe, international et attractivité ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Olivier PJANIC",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Claire ROUSSEAU",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Marianne ROZET",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Pierre VOGT",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Pierre VOGT",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller délégué / Mer ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Laurent BEAUVAIS",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Brigitte CHOQUET",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Bertrand DENIAUD",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Bertrand DENIAUD",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 4e vice-président / Lycées et éducation ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Claire-Emmanuelle GAUER",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Sophia HABIBI-NOORI",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Thierry LIGER",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Thierry LIGER",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Président de la commission Finances ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Catherine MEUNIER",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Catherine MEUNIER",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Présidente de la commission Affaires générales et moyens de la collectivité · Présidente de la commission Environnement et développement durable ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Nicolas BAY",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Jean-François BLOC",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Augustin BOEUF",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Augustin BOEUF",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller délégué / Nautisme ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Laurent BONNATERRE",
+      "detail": "Groupe politique : « — » → « Normandie Terre d'avenir ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Yves BONNET",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Mélanie BOULANGER",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Matthieu BRASSE",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Véronique BÉREGOVOY",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Malika CHERRIERE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Malika CHERRIERE",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseillère déléguée / Filière équine ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Edouard DE LAMAZE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Edouard DE LAMAZE",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller régional chargé de la mission Patrimoine ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Hubert DEJEAN DE LA BATIE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Hubert DEJEAN DE LA BATIE",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 14e vice-président / Transition environnementale et énergétique ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Jean DELALANDRE",
+      "detail": "Groupe politique : « — » → « Normandie Terre d'avenir ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Ludovic DELESQUE",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Clotilde EUDIER",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Clotilde EUDIER",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 3e vice-présidente / Agriculture, pêche et forêt ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "David FONTAINE",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Eve FROGER",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Jean-Baptiste GASTINNE",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Jean-Baptiste GASTINNE",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 6e vice-président / Mobilités, transports et Axe Seine ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Sabrina GOULAY",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Jonas HADDAD",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Jonas HADDAD",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 2e vice-président / Emploi, formation, orientation et apprentissage ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Pierre-Emmanuel HAUTOT",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Eric HERBET",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Eric HERBET",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller délégué / Forêt ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Pascal HOUBRON",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Pascal HOUBRON",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseiller délégué / Sécurité ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Agnès LALOI",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Vanessa LANCELOT",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Xavier LEFRANÇOIS",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Xavier LEFRANÇOIS",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Président de la commission Aménagement du territoire, mobilités, santé, sécurité ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Aline LOUISY-LOUIS",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Aline LOUISY-LOUIS",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 13e vice-présidente / Sport, jeunesse, nautisme ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Virginie LUTROT",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Virginie LUTROT",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « 5e vice-présidente / Finances ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Laëtitia MALHERBE",
+      "detail": "Groupe politique : « — » → « Normandie écologie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Bénédicte MARTIN",
+      "detail": "Groupe politique : « — » → « La Gauche Normande - Socialistes et Apparentés ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Catherine MORIN-DESAILLY",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Catherine MORIN-DESAILLY",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Présidente de la commission Culture, tourisme et patrimoine ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Oumou NIANG-FOUQUET",
+      "detail": "Groupe politique : « — » → « Normandie Terre d'avenir ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Guillaume PENNELLE",
+      "detail": "Groupe politique : « — » → « Rassemblement national - Faire gagner la Normandie ».",
+      "url": null
+    },
+    {
+      "type": "changement_groupe",
+      "nom": "Marie-Hélène ROUX",
+      "detail": "Groupe politique : « — » → « La Normandie Conquérante avec Hervé Morin ».",
+      "url": null
+    },
+    {
+      "type": "changement_role",
+      "nom": "Marie-Hélène ROUX",
+      "detail": "Délégation (normandie.fr) modifiée : « — » → « Conseillère déléguée / Jeunesse · Présidente de la commission Jeunesse et sport ».",
+      "url": null
+    }
+  ]
 }
