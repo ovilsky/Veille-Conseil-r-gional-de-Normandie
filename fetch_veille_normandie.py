@@ -51,6 +51,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 from datetime import datetime
 
 import requests
@@ -115,6 +116,27 @@ DELIBERATIONS_CSV_URL_FALLBACK = "https://www.data.gouv.fr/api/1/datasets/r/c545
 ELUS_LISTE_URL = "https://www.normandie.fr/conseillers-regionaux"
 SITE_BASE = "https://www.normandie.fr"
 
+# Répertoire National des Élus (RNE) — Ministère de l'Intérieur, publié sur
+# data.gouv.fr. Devient la source PRINCIPALE du roster des élus : contrairement
+# au site normandie.fr, elle n'est jamais bloquée par un pare-feu applicatif
+# (hébergement différent). Fichier "conseillers régionaux" du jeu de données
+# — identifiant de ressource confirmé par recoupement indépendant (utilisé
+# tel quel par le projet open-source data_france de La France Insoumise).
+# Fiche : https://www.data.gouv.fr/datasets/repertoire-national-des-elus-1
+# CE QUE CE FICHIER NE CONTIENT PAS : le groupe politique / la nuance —
+# vérifié sur deux extraits réels du RNE (fichiers "maires" et "membres
+# d'assemblée"), aucune colonne de nuance politique n'existe pour ces
+# fichiers. Le groupe politique reste donc uniquement disponible via
+# l'enrichissement normandie.fr (best-effort, voir plus bas).
+RNE_ELUS_REGIONAUX_URL = "https://www.data.gouv.fr/api/1/datasets/r/430e13f9-834b-4411-a1a8-da0b4b6e715c"
+
+# Correspondance libellé de département -> code, utilisée en repli si le
+# fichier RNE ne fournit pas de code de département exploitable directement.
+DEPT_LABEL_TO_CODE = {
+    "calvados": "14", "eure": "27", "manche": "50", "orne": "61",
+    "seine-maritime": "76", "seine maritime": "76",
+}
+
 # Groupes politiques tels qu'affichés dans le filtre de la page listant les
 # conseillers régionaux (constaté le 21/08/2026 — à revérifier
 # périodiquement : ce sont des libellés déclaratifs qui changent avec les
@@ -131,6 +153,26 @@ GROUPES_CONNUS = [
 DATE_MAJ_RE = re.compile(r"Mis à jour le\s+(\d{1,2}\s+\w+\s+\d{4})")
 POSTAL_RE = re.compile(r"\b\d{5}\b")
 EMAIL_RE = re.compile(r"[\w.+-]+@normandie\.fr")
+
+
+def normalize_colname(s):
+    """Normalise un nom de colonne CSV pour une comparaison robuste : sans
+    accents, sans ponctuation, minuscules. Permet de retrouver une colonne
+    même si son intitulé exact varie légèrement d'une publication à l'autre
+    du RNE (constaté : présence/absence de certaines colonnes géographiques
+    selon le fichier)."""
+    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode("ascii")
+    s = re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
+    return s
+
+
+def sniff_delimiter(first_line):
+    """Les fichiers du RNE ne sont pas tous délimités de la même façon selon
+    le fichier (constaté : tabulations pour certains extraits, points-virgules
+    pour d'autres). Choisit le délimiteur le plus fréquent sur la première
+    ligne plutôt que d'en figer un a priori."""
+    counts = {d: first_line.count(d) for d in ("\t", ";", ",")}
+    return max(counts, key=counts.get) if max(counts.values()) > 0 else ";"
 
 
 SESSION = requests.Session()
@@ -330,6 +372,101 @@ def fetch_deliberations():
 # Élus
 # ---------------------------------------------------------------------------
 
+def resolve_rne_column(fieldnames, *candidates_normalized):
+    """Retrouve la vraie colonne du CSV RNE correspondant à un champ logique
+    (ex. "nom de l'élu"), par comparaison normalisée exacte d'abord, puis par
+    recherche de sous-chaîne — plutôt que de supposer un nom de colonne figé
+    qui pourrait ne pas correspondre exactement à la publication réelle."""
+    norm_map = {normalize_colname(f): f for f in fieldnames}
+    for cand in candidates_normalized:
+        if cand in norm_map:
+            return norm_map[cand]
+    for cand in candidates_normalized:
+        for norm, orig in norm_map.items():
+            if cand in norm:
+                return orig
+    return None
+
+
+def fetch_elus_rne():
+    """Récupère le roster officiel des conseillers régionaux normands depuis
+    le Répertoire National des Élus (Ministère de l'Intérieur, data.gouv.fr).
+    Source principale et robuste : contrairement à normandie.fr, jamais
+    bloquée par un pare-feu applicatif. Ne fournit PAS le groupe politique
+    (absent de ce fichier, vérifié sur des extraits réels), seulement
+    l'identité, le département et la fonction (conseiller / vice-président /
+    président)."""
+    resp = get(RNE_ELUS_REGIONAUX_URL)
+    raw = resp.content
+    try:
+        text = raw.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        text = raw.decode("cp1252")
+
+    first_line = text.split("\n", 1)[0]
+    delimiter = sniff_delimiter(first_line)
+    reader = csv.DictReader(io.StringIO(text), delimiter=delimiter)
+    fieldnames = reader.fieldnames or []
+
+    col_nom = resolve_rne_column(fieldnames, "nom de l elu", "nom elu", "nom")
+    col_prenom = resolve_rne_column(fieldnames, "prenom de l elu", "prenom elu", "prenom")
+    col_region = resolve_rne_column(fieldnames, "libelle de la region", "libelle region", "region")
+    col_dept_lib = resolve_rne_column(fieldnames, "libelle du departement", "libelle departement")
+    col_dept_code = resolve_rne_column(fieldnames, "code du departement", "code departement")
+    col_fonction = resolve_rne_column(fieldnames, "libelle de la fonction", "libelle fonction")
+    col_date_mandat = resolve_rne_column(fieldnames, "date de debut du mandat", "date debut mandat")
+    col_naissance = resolve_rne_column(fieldnames, "date de naissance")
+
+    required = {"colonne nom": col_nom, "colonne prénom": col_prenom, "colonne région": col_region}
+    missing = [label for label, val in required.items() if not val]
+    if missing:
+        raise ValueError(
+            f"Colonnes essentielles introuvables dans le fichier RNE ({', '.join(missing)}). "
+            f"Colonnes réellement présentes : {fieldnames}. "
+            f"Ne pas deviner : vérifier le fichier à la main sur "
+            f"https://www.data.gouv.fr/datasets/repertoire-national-des-elus-1"
+        )
+
+    results = []
+    for row in reader:
+        region_val = row.get(col_region) or ""
+        if "normandie" not in normalize_colname(region_val):
+            continue
+        nom = (row.get(col_nom) or "").strip()
+        prenom = (row.get(col_prenom) or "").strip()
+        if not nom:
+            continue
+
+        dept_code = None
+        if col_dept_code:
+            raw_code = (row.get(col_dept_code) or "").strip()
+            if raw_code.isdigit():
+                dept_code = raw_code.zfill(2)
+        if not dept_code and col_dept_lib:
+            dept_code = DEPT_LABEL_TO_CODE.get(normalize_colname(row.get(col_dept_lib) or ""))
+
+        results.append({
+            "nom": f"{prenom} {nom}".strip(),
+            "nom_famille": nom,  # pour le rapprochement avec l'enrichissement normandie.fr
+            "departement": dept_code,
+            "fonction_rne": (row.get(col_fonction) or "").strip() or None,
+            "date_debut_mandat": (row.get(col_date_mandat) or "").strip() or None,
+            "date_naissance": (row.get(col_naissance) or "").strip() or None,
+            "groupe": None,
+            "role_brut": None,
+            "maj": None,
+            "url": None,
+        })
+
+    if not results:
+        raise ValueError(
+            f"Aucun conseiller régional normand trouvé dans le RNE (colonne région "
+            f"utilisée : {col_region!r}). Le filtre a peut-être échoué ou le fichier "
+            f"a changé de structure. Colonnes : {fieldnames}"
+        )
+    return results
+
+
 def fetch_elus_liste():
     """Récupère la liste des élus et leur département depuis la page listant
     les conseillers régionaux. Les élus y sont groupés sous un titre de
@@ -423,7 +560,12 @@ def fetch_elu_fiche(elu):
     return {"groupe": groupe, "maj": maj, "role_brut": role_brut}
 
 
-def fetch_elus():
+def fetch_elus_normandie_fr_enrichment():
+    """Tente de récupérer groupe politique et délégation depuis normandie.fr.
+    Best-effort : toute erreur (403 inclus) est remontée à l'appelant, qui
+    doit la traiter comme un enrichissement manqué et non comme un échec de
+    la collecte des élus dans son ensemble — le roster RNE reste valide sans
+    cet enrichissement."""
     elus = fetch_elus_liste()
     if PROFILE_MAX:
         elus = elus[:PROFILE_MAX]
@@ -435,49 +577,106 @@ def fetch_elus():
     return elus
 
 
+def match_enrichment(nom_famille, enrichment_elus):
+    """Rapproche un élu RNE (identifié par son seul nom de famille) avec la
+    liste enrichie scrapée sur normandie.fr, par inclusion de chaîne
+    normalisée plutôt qu'égalité stricte — les prénoms composés et l'ordre
+    nom/prénom varient parfois d'une source à l'autre."""
+    nf = normalize_colname(nom_famille)
+    if not nf:
+        return None
+    for e in enrichment_elus:
+        if nf in normalize_colname(e.get("nom") or ""):
+            return e
+    return None
+
+
+def fetch_elus():
+    """Roster : RNE (obligatoire, robuste — jamais bloqué). Enrichissement
+    (groupe politique, délégation, URL de fiche) : normandie.fr, best-effort.
+    Un échec de l'enrichissement (ex. 403 persistant) n'empêche jamais
+    d'obtenir un roster complet — seuls le groupe et la délégation resteront
+    alors non renseignés, ce que le dashboard indique clairement."""
+    elus = fetch_elus_rne()
+
+    try:
+        enrichment = fetch_elus_normandie_fr_enrichment()
+        enrichment_ok = True
+    except Exception as e:
+        is_403 = isinstance(e, requests.HTTPError) and getattr(e.response, "status_code", None) == 403
+        if is_403:
+            print(f"    ! enrichissement normandie.fr indisponible (403 Forbidden, blocage réseau probable) — "
+                  f"le roster RNE ({len(elus)} élus) reste complet, mais sans groupe politique ni délégation "
+                  f"pour cette collecte.", file=sys.stderr)
+        else:
+            print(f"    ! enrichissement normandie.fr indisponible ({e}) — "
+                  f"le roster RNE reste complet, mais sans groupe politique ni délégation.", file=sys.stderr)
+        enrichment = []
+        enrichment_ok = False
+
+    for elu in elus:
+        match = match_enrichment(elu["nom_famille"], enrichment)
+        if match:
+            elu["groupe"] = match.get("groupe")
+            elu["role_brut"] = match.get("role_brut")
+            elu["maj"] = match.get("maj")
+            elu["url"] = match.get("url")
+
+    return elus, enrichment_ok
+
+
 def diff_elus(elus_actuels, elus_precedents):
     """Compare le snapshot actuel des élus au précédent (chargé depuis
     elus-precedent.json) et produit une liste de mouvements détectés :
-    nouvel élu, élu disparu de la liste, changement de groupe, changement de
-    rôle/délégation. Clé de rapprochement : l'URL de la fiche (stable,
-    contrairement au nom qui peut être orthographié différemment d'une page
-    à l'autre — cas constaté : 'Nathalie Porte' vs 'Nathalie Dijols-Porte')."""
-    prev_by_url = {e["url"]: e for e in elus_precedents}
-    actuels_by_url = {e["url"]: e for e in elus_actuels}
+    nouvel élu, élu disparu de la liste, changement de fonction officielle
+    (RNE), changement de groupe ou de délégation (si l'enrichissement est
+    disponible). Clé de rapprochement : le nom de famille normalisé — stable
+    d'une collecte à l'autre car issu du RNE, contrairement à l'URL de fiche
+    normandie.fr qui n'existe que lorsque l'enrichissement a réussi."""
+    key = lambda e: normalize_colname(e.get("nom_famille") or e.get("nom") or "")
+    prev_by_key = {key(e): e for e in elus_precedents if key(e)}
+    actuels_by_key = {key(e): e for e in elus_actuels if key(e)}
     mouvements = []
 
-    for url, elu in actuels_by_url.items():
-        prev = prev_by_url.get(url)
+    for k, elu in actuels_by_key.items():
+        prev = prev_by_key.get(k)
         if prev is None:
             mouvements.append({
                 "type": "nouvel_elu",
                 "nom": elu["nom"],
-                "detail": f"Apparaît pour la première fois dans la liste (groupe : {elu.get('groupe') or 'non renseigné'}).",
-                "url": url,
+                "detail": f"Apparaît pour la première fois dans le RNE (fonction : {elu.get('fonction_rne') or 'non renseignée'}).",
+                "url": elu.get("url"),
             })
             continue
+        if prev.get("fonction_rne") != elu.get("fonction_rne"):
+            mouvements.append({
+                "type": "changement_fonction",
+                "nom": elu["nom"],
+                "detail": f"Fonction officielle (RNE) : « {prev.get('fonction_rne') or '—'} » → « {elu.get('fonction_rne') or '—'} ».",
+                "url": elu.get("url"),
+            })
         if prev.get("groupe") != elu.get("groupe"):
             mouvements.append({
                 "type": "changement_groupe",
                 "nom": elu["nom"],
                 "detail": f"Groupe politique : « {prev.get('groupe') or '—'} » → « {elu.get('groupe') or '—'} ».",
-                "url": url,
+                "url": elu.get("url"),
             })
         if prev.get("role_brut") != elu.get("role_brut"):
             mouvements.append({
                 "type": "changement_role",
                 "nom": elu["nom"],
-                "detail": f"Fonction/délégation modifiée : « {prev.get('role_brut') or '—'} » → « {elu.get('role_brut') or '—'} ».",
-                "url": url,
+                "detail": f"Délégation (normandie.fr) modifiée : « {prev.get('role_brut') or '—'} » → « {elu.get('role_brut') or '—'} ».",
+                "url": elu.get("url"),
             })
 
-    for url, elu in prev_by_url.items():
-        if url not in actuels_by_url:
+    for k, elu in prev_by_key.items():
+        if k not in actuels_by_key:
             mouvements.append({
                 "type": "elu_disparu",
                 "nom": elu["nom"],
                 "detail": "N'apparaît plus dans la liste des conseillers régionaux (vérifier : démission, décès, remplacement).",
-                "url": url,
+                "url": elu.get("url"),
             })
 
     return mouvements
@@ -529,21 +728,15 @@ def main():
         print(f"    ! échec : {e}", file=sys.stderr)
         deliberations, deliberations_ok = [], False
 
-    print("→ Élus (fiches normandie.fr)")
+    print("→ Élus (RNE + enrichissement normandie.fr)")
     try:
-        elus_actuels = fetch_elus()
+        elus_actuels, enrichment_ok = fetch_elus()
         elus_ok = True
+        print(f"    {len(elus_actuels)} élu(e)s (RNE) "
+              f"{'— enrichissement normandie.fr OK' if enrichment_ok else '— sans enrichissement (voir avertissement ci-dessus)'}")
     except Exception as e:
-        is_403 = isinstance(e, requests.HTTPError) and getattr(e.response, "status_code", None) == 403
-        if is_403:
-            print(f"    ! échec (403 Forbidden) : normandie.fr bloque la requête malgré des "
-                  f"en-têtes de navigateur standards. C'est le signe probable d'un blocage par "
-                  f"adresse IP des serveurs GitHub Actions (pare-feu applicatif de type "
-                  f"anti-robot), pas d'un problème d'en-têtes HTTP — voir la section "
-                  f"'Le blocage 403 persiste' du GUIDE_INSTALLATION.md.", file=sys.stderr)
-        else:
-            print(f"    ! échec : {e}", file=sys.stderr)
-        elus_actuels, elus_ok = [], False
+        print(f"    ! échec (roster RNE indisponible) : {e}", file=sys.stderr)
+        elus_actuels, elus_ok, enrichment_ok = [], False, False
 
     # Charge le snapshot précédent pour calculer les mouvements. Un fichier
     # absent (premier lancement) donne un diff où tout le monde est "nouveau" :
@@ -570,12 +763,14 @@ def main():
         "premiere_execution": premiere_execution,
         "sources": {
             "deliberations_fiche": "https://www.data.gouv.fr/fr/datasets/liste-des-deliberations-mandat-actuel-2021-a-2028/",
+            "elus_rne": "https://www.data.gouv.fr/datasets/repertoire-national-des-elus-1",
             "elus_liste": ELUS_LISTE_URL,
             "elus_scdl_schema": "https://schema.data.gouv.fr/scdl/deliberations/",
         },
         "statut_collecte": {
             "deliberations_ok": deliberations_ok,
             "elus_ok": elus_ok,
+            "elus_enrichment_ok": enrichment_ok,
         },
         "deliberations": deliberations,
         "elus": elus_actuels if elus_ok else elus_precedents,  # garde la dernière donnée valide en cas d'échec
